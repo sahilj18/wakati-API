@@ -1,2 +1,8 @@
-# wakati-api
-In house text intelligence API for Wakati
+```
+npm install
+npm run dev
+```
+
+```
+npm run deploy
+```
