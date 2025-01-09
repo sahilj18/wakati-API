@@ -1,5 +1,6 @@
 {
   "name": "wakati-api",
+  "version": "1.0.0",
   "scripts": {
     "dev": "wrangler dev",
     "lint": "bun run eslint",
