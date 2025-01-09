@@ -13,6 +13,7 @@ export default function configureOpenAPI(app: OpenAPIHono) {
     })
     app.get("reference", 
         apiReference({
+            theme: "elysiajs",
             spec:{
                 url:"/doc"
             }
