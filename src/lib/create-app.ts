@@ -12,7 +12,7 @@ export function createRouter(){
 export default function createApp() {
     const app = createRouter()
     app.use(logger())
-    app.use(serveEmojiFavicon("👻"))
+    // app.use(serveEmojiFavicon("🌹"))
     app.notFound(notFound)
     app.onError(onError)
 
