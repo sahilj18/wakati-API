@@ -1,7 +1,6 @@
 name = "wakati-api"
 main = "src/index.ts"
 compatibility_date = "2025-01-08"
-auth_token = "Workers Builds - 2025-01-05 19:12"
 
 # compatibility_flags = [ "nodejs_compat" ]
 
