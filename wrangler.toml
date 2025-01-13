@@ -1,6 +1,7 @@
 name = "wakati-api"
 main = "src/index.ts"
 compatibility_date = "2025-01-08"
+assets = { directory = "public" }
 
 # compatibility_flags = [ "nodejs_compat" ]
 
@@ -26,5 +27,3 @@ compatibility_date = "2025-01-08"
 # [observability]
 # enabled = true
 # head_sampling_rate = 1
-
-assets = { directory = "public" }
