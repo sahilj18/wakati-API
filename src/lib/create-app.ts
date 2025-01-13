@@ -1,6 +1,6 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { notFound, onError } from "stoker/middlewares"
-import logger from "./logger"
+import logger from "../middleware/logger"
 
 
 export function createRouter(){
