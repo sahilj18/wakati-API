@@ -1,4 +1,5 @@
 import { createRoute, z } from '@hono/zod-openapi'
+import * as HttpStatusCodes from "stoker/http-status-codes"
 
 export const analyze = createRoute({
     path: "/analyze",
@@ -15,7 +16,7 @@ export const analyze = createRoute({
         }
     },
     responses: {
-        200: {
+        [HttpStatusCodes.OK]: {
             content: {
                 "application/json": {
                     schema: z.object({

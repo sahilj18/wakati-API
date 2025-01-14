@@ -1,11 +1,12 @@
 import { createRoute, z } from '@hono/zod-openapi'
 import { createRouter } from "@/lib/create-app"
+import * as HttpStatusCodes from "stoker/http-status-codes"
 
 const router = createRouter().openapi(createRoute({
     path: "/get",
     method: "get",
     responses: {
-        200: {
+        [HttpStatusCodes.OK]: {
             content: {
                 "application/json": {
                     schema: z.object({
