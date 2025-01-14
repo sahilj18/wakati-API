@@ -1,5 +1,5 @@
-import { createRouter } from "@/lib/create-app"
 import { createRoute, z } from '@hono/zod-openapi'
+import { createRouter } from "@/lib/create-app"
 
 const router = createRouter().openapi(createRoute({
     path: "/get",
@@ -16,7 +16,7 @@ const router = createRouter().openapi(createRoute({
         },
     },
 }), (c) => {
-    return c.json({ message: "" })
+    return c.json({ message: "API is active" })
 })
 
 export default router
