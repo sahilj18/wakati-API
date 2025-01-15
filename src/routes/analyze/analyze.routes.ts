@@ -9,7 +9,7 @@ export const analyze = createRoute({
       content: {
         "application/json": {
           schema: z.object({
-            text: z.string(),
+            text: z.string().min(1),
           }),
         },
       },

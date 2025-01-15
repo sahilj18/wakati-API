@@ -6,14 +6,12 @@ import { RouteHandler } from "@hono/zod-openapi"
 export const url: RouteHandler<AnalyzeRoute> = async (c: Context) => {
     const body = await c.req.json()
 
-    if (!body.url) {
-        return c.json({ error: "valid url is required" },
-            HttpStatusCodes.BAD_REQUEST);
-    }
+   const res = await fetch(body.url)
+   const data = await res.text()
 
 
 
-    return c.json({ message: body.url })
+    return c.json({  data })
 
 }
 
