@@ -7,7 +7,7 @@ import { evaluate } from "@/lib/evaluate"
 export const analyze: RouteHandler<AnalyzeRoute> = async (c: Context) => {
     const body = await c.req.json()
 
-    if (!body.text) {
+    if (!body.url) {
         return c.json({ error: "text is required" },
             HttpStatusCodes.BAD_REQUEST);
     }
