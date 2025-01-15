@@ -22,7 +22,7 @@ export const analyze = createRoute({
                     schema: z.object({
                     }),
                 },
-            }, description: "Hello from Wakati!👋"
+            }, description: "Analyze text based on diffrent algorithmic rules"
         },
     },
 })
