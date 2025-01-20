@@ -1,6 +1,16 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { notFound, onError } from "stoker/middlewares"
 import logger from "../middleware/logger"
+import {cloudflareRateLimiter} from "@hono-rate-limiter/cloudflare"
+
+type AppType = {
+    Variables: {
+      rateLimit: boolean;
+    };
+    Bindings: {
+      RATE_LIMITER: RateLimit;
+    };
+  };
 
 
 export function createRouter(){
@@ -12,6 +22,13 @@ export default function createApp() {
     app.use(logger())
     app.notFound(notFound)
     app.onError(onError)
+    app.use(
+        cloudflareRateLimiter<AppType>({
+            rateLimitBinding: (c) => c.env.RATE_LIMITER,
+            keyGenerator: (c) => c.req.header("cf-connecting-ip") ?? "",
+            message:{message: " too many requests,please try again later"}
+          })
+        );
 
     return app
 
